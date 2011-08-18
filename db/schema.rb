@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20110818134345) do
 
   create_table "jobs", :force => true do |t|
     t.string   "title"
-    t.string   "type"
+    t.string   "contract_type"
     t.string   "location"
     t.text     "description"
     t.string   "company_name"

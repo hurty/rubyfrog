@@ -1,4 +1,4 @@
-require 'test_helper'
+rarequire 'test_helper'
 
 class JobTest < ActiveSupport::TestCase
   # test "the truth" do
