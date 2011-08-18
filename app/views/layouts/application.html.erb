@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<h1 class="title">RubyTaf</h1>
+<%= link_to "Liste des offres", jobs_path %>  
+<%= link_to "Poster une offre", new_job_path %>
+<% if flash[:notice] %>
+<p class="notice"><%= flash[:notice] %></p>
+<% end %>
 <%= yield %>
 
 </body>

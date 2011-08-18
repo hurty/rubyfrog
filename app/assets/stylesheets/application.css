@@ -5,3 +5,7 @@
  *= require_self
  *= require_tree . 
 */
+
+.title {
+    color: #bb0033;
+}

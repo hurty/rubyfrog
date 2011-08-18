@@ -1,3 +1,10 @@
 Rubytaf::Application.routes.draw do
-  resources :jobs
+  root to: "jobs#index"
+  
+  resources :jobs do
+    member do
+      get "preview"
+      post "publish"
+    end
+  end
 end

@@ -1,0 +1,14 @@
+<div class="job_card">
+  <h1><%= @job.title %></h1>
+  <p><%= @job.contract_type %></p>
+  <p><%= @job.company_name %></p>
+  <p><%= @job.location %></p>
+  <% if @job.company_url %>
+  <p><%= @job.company_url %></p>
+  <% end %>
+  <hr/>
+  <p><%= @job.description %></p>
+  <div class="apply">
+    Pour candidater : <%= @job.company_email %>
+  </div>
+</div>

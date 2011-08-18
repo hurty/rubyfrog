@@ -8,6 +8,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :company_name
       t.string :company_email
       t.string :company_url
+      t.boolean :public, default: false
 
       t.timestamps
     end
