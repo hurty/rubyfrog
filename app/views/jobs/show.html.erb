@@ -8,7 +8,7 @@
   <p><%= @job.company_url %></p>
   <% end %>
   <hr/>
-  <p><%= @job.description %></p>
+  <%= raw BlueCloth.new(@job.description).to_html %>
   <div class="apply">
     Pour candidater : <%= @job.company_email %>
   </div>

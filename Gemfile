@@ -35,3 +35,6 @@ group :test do
   gem 'turn', :require => false
   gem 'factory_girl_rails'
 end
+
+# Mardown displaying
+gem 'bluecloth'
