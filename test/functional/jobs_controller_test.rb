@@ -37,14 +37,13 @@ class JobsControllerTest < ActionController::TestCase
   
   test "should get the job edition form" do
     job = Factory(:job)
-    get :edit, id: job.id
+    get :edit, id: job.token
     assert_response :success
   end
   
   test "should get job offer preview" do
     job = Factory(:job)
-    get :preview, id: job.id
+    get :preview, id: job.token
     assert_response :success
-    assert_select "body", /publier/
   end
 end

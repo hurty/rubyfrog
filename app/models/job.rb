@@ -13,7 +13,10 @@ class Job < ActiveRecord::Base
   
   private
   
+    # Generates a unique token for the job offer
+    # This is used when the company wants to update informations or delete the offer
     def set_token
-      self.token = SecureRandom.base64(16)
+      # we remove slashes from token in order to avoid bad routing
+      self.token = SecureRandom.base64(16).gsub('/', '')
     end
 end

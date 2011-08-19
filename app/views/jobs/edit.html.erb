@@ -1,3 +1,51 @@
 <h2>Modifier l'offre</h2>
 
-<%= render :partial => 'form' %>
+<%= form_for @job, :url => { :action => "update" } do |f| %>
+  <div>
+  <%= f.label :title, "Titre de l'offre" %> <br />
+  <%= f.text_field :title %>
+  <%= @job.errors[:title].first %>
+  </div>
+  
+  <div>
+  <%= f.label :contract_type, "Type de contrat" %> <br />
+  <%= f.text_field :contract_type %>
+  <%= @job.errors[:contract_type].first %>
+  </div>
+
+  <div>
+  <%= f.label :location, "Lieu" %> <br />
+  <%= f.text_field :location %>
+  <%= @job.errors[:location].first %>
+  </div>
+
+  <div>
+  <%= f.label :description, "Description du poste" %> <br />
+  <%= f.text_area :description %>
+  <%= @job.errors[:description].first%>
+  </div>
+
+  <div>
+  <%= f.label :company_name, "Nom de la société" %> <br />
+  <%= f.text_field :company_name %>
+  <%= @job.errors[:company_name].first %>
+  </div>
+
+  <div>
+  <%= f.label :company_email, "Adresse e-mail pour candidater" %> <br />
+  <%= f.text_field :company_email %>
+  <%= @job.errors[:company_email].first %>
+  </div>
+
+  <div>
+  <%= f.label :company_url, "Site web de la société (facultatif)" %> <br />
+  <% if @job.company_url.blank? %>
+  <%= f.text_field :company_url, value: "http://www." %>  
+  <% else %>
+  <%= f.text_field :company_url %>
+  <% end %>
+  <%= @job.errors[:company_url].first %>
+  </div>
+  
+  <%= f.submit "Prévisualiser l'offre" %>
+<% end %>
