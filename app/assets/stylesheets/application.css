@@ -3,20 +3,7 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree . 
+ *= require reset
+ *= require main
+ *= require_tree .
 */
-
-body {
-    background: white;
-    font-family: "Helvetica", "Arial", sans-serif
-}
-
-.title {
-    color: #444751;
-    font-family: "helvetica", sans-serif;
-    font-size: 70px;
-    font-weight: bold;
-    padding-bottom: 20px;
-    border-bottom: 5px solid #444751;
-    width: 800px;
-}

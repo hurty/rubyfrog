@@ -1,0 +1,32 @@
+$ardoise: #444751;
+
+body {
+    background: white;
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: $ardoise;
+}
+
+#container {
+  width: 800px;
+  margin-left: auto; 
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+
+.title {
+    color: $ardoise;
+    font-family: "helvetica", sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 20px;
+/*    border-bottom: 5px solid $ardoise;*/
+    width: 800px;
+}
+
+.notice {
+  background: #ffffdd;
+}
+
+.field_with_errors {
+  background: #ffeebb;
+}
