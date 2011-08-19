@@ -37,7 +37,11 @@
 
   <div>
   <%= f.label :company_url, "Site web de la société (facultatif)" %> <br />
-  <%= f.text_field :company_url, value: "http://www." %>
+  <% if @job.company_url.blank? %>
+  <%= f.text_field :company_url, value: "http://www." %>  
+  <% else %>
+  <%= f.text_field :company_url %>
+  <% end %>
   <%= @job.errors[:company_url].first %>
   </div>
   
