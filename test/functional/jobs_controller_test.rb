@@ -45,5 +45,6 @@ class JobsControllerTest < ActionController::TestCase
     job = Factory(:job)
     get :preview, id: job.id
     assert_response :success
+    assert_select "body", /publier/
   end
 end

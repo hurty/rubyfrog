@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110818134345) do
+ActiveRecord::Schema.define(:version => 20110819142407) do
 
   create_table "jobs", :force => true do |t|
     t.string   "title"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20110818134345) do
     t.boolean  "public",        :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "token"
   end
 
 end
