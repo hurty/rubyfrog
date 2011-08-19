@@ -6,6 +6,16 @@
  *= require_tree . 
 */
 
+body {
+    background: white;
+}
+
 .title {
-    color: #bb0033;
+    color: #444751;
+    font-family: "helvetica", sans-serif;
+    font-size: 70px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    border-bottom: 5px solid #444751;
+    width: 800px;
 }

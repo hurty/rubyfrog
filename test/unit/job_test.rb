@@ -42,7 +42,7 @@ class JobTest < ActiveSupport::TestCase
   end
   
   test "job is not public by default" do
-    job = Factory(:job)
+    job = Factory.build(:job)
     assert !job.public?
   end
 end
