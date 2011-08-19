@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'test_helper'
 
 class JobsControllerTest < ActionController::TestCase
@@ -23,5 +25,25 @@ class JobsControllerTest < ActionController::TestCase
         company_email: "hello@knplabs.com",
       }
     end
+  end
+  
+  test "should not create a new job offer" do
+    assert_no_difference "Job.count" do
+      post :create, job: { 
+        title: "Rails developer"
+      }
+    end
+  end
+  
+  test "should get the job edition form" do
+    job = Factory(:job)
+    get :edit, id: job.id
+    assert_response :success
+  end
+  
+  test "should get job offer preview" do
+    job = Factory(:job)
+    get :preview, id: job.id
+    assert_response :success
   end
 end
