@@ -1,7 +1,6 @@
 $ardoise: #444751;
 
 body {
-    background: white;
     font-family: "Helvetica", "Arial", sans-serif;
     color: $ardoise;
 }
@@ -11,15 +10,35 @@ body {
   margin-left: auto; 
   margin-right: auto;
   margin-bottom: 60px;
+  border-top: 5px solid $ardoise;
+  padding-top: 30px;
+}
+
+#menu {
+  margin-bottom: 40px;
+  
+  a {
+    color: $ardoise;
+    background: #ffffdd;
+    padding: 4px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    background: yellow;
+  }
+
 }
 
 .title {
     color: $ardoise;
-    font-family: "helvetica", sans-serif;
+    font-family: 'Permanent Marker', cursive;
     font-size: 40px;
     font-weight: bold;
-    padding-bottom: 20px;
-/*    border-bottom: 5px solid $ardoise;*/
+    padding-bottom: 30px;
     width: 800px;
 }
 
@@ -30,3 +49,4 @@ body {
 .field_with_errors {
   background: #ffeebb;
 }
+

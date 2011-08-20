@@ -18,12 +18,14 @@
     
   </div>
   
-  <div class="job_apply">
-    Pour candidater : <%= mail_to @job.company_email %>
-  </div>
+
   
   <div class="job_description">
     <%= raw BlueCloth.new(@job.description).to_html %>    
+  </div>
+  
+  <div class="job_apply">
+    Envoyez votre candidature à <%= mail_to @job.company_email %>
   </div>
   
 </div>

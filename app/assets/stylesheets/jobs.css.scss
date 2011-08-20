@@ -2,21 +2,48 @@ $sky: #48A1D8;
 
 a {
   color: $sky;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .job_summary {
   border-bottom: 1px solid #E0E0E0;
   font-size: 0.8em;
+  padding: 16px;
+}
+
+.form_container {
+  border: 1px solid #E0E0E0;
+  border-left: 1px solid #E0E0E0;
+  padding: 10px;
+  margin-top: 50px;
+  background: #FFFFFF;
+}
+
+.post_job {
+  font-size: 2em;
+  border-bottom: 1px solid #E0E0E0;
+  margin-bottom: 30px;
+  padding: 20px 0px 20px 0px;
+
 }
 
 .job_card {
   border: 1px solid #E0E0E0;
   padding: 30px;
+  background: #FFFFFF;
+  margin-top: 50px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   
   .job_title {
     color: $sky;
     font-size: 2em;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .job_created_at {
@@ -30,7 +57,6 @@ a {
   .job_general_infos {
     font-size: 0.9em;
     border-bottom: 1px solid #E0E0E0;
-    border-top: 1px solid #E0E0E0;
     padding: 10px 0px 10px 0px;
   }
   
@@ -56,6 +82,9 @@ a {
     p {
       font-size: 0.9em;
       margin: 7px 0px 0px 0px;
+      text-align: justify;
+      color: #696C74;
+      line-height: 20px;
     }
       
   }
@@ -63,7 +92,9 @@ a {
   .job_apply {
     font-size: 0.9em;
     background: #ffffdd;
-    padding: 10px 2px 10px 2px;
+    padding: 10px 10px 10px 10px;
     border-top: 1px solid white;
+    font-weight: bold;
+    margin-top: 30px;
   }
 }
