@@ -14,7 +14,7 @@
       <p>Type de contrat : <%= @job.contract_type %></p>
       <p>Lieu : <%= @job.location %></p>  
     </div>
-    <p class="job_created_at">Offre postée le : <%= @job.created_at.strftime("%d/%m/%y") %></p>
+    <p>Offre postée le : <%= @job.created_at.strftime("%d/%m/%y") %></p>
     
   </div>
   
@@ -24,8 +24,6 @@
     <%= raw BlueCloth.new(@job.description).to_html %>    
   </div>
   
-  <div class="job_apply">
-    Envoyez votre candidature à <%= mail_to @job.company_email %>
-  </div>
+  <div class="job_apply">Envoyez votre candidature à <%= mail_to @job.company_email %></div>
   
 </div>

@@ -10,8 +10,8 @@ body {
   margin-left: auto; 
   margin-right: auto;
   margin-bottom: 60px;
-  border-top: 5px solid $ardoise;
-  padding-top: 30px;
+  padding: 30px 0px 30px 0px;
+  border-top: 10px solid $ardoise;  
 }
 
 #menu {
@@ -20,16 +20,23 @@ body {
   a {
     color: $ardoise;
     background: #ffffdd;
-    padding: 4px;
+    padding: 7px;
+    font-weight: 300;
+    font-size: 1.2em;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    margin-right: 10px;
   }
   
   a:hover {
     text-decoration: none;
     background: yellow;
   }
+
+}
+
+#footer {
 
 }
 
@@ -47,6 +54,36 @@ body {
 }
 
 .field_with_errors {
-  background: #ffeebb;
+  background: #E95C41;
 }
 
+.page_title {
+  border-bottom: 1px solid #E0E0E0;
+  border-top: 5px solid $ardoise;
+  padding: 20px 0px 20px 0px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+
+.field {
+/*  background: #EDF1F3;*/
+  margin-top: 1px;
+  padding: 10px 0px 10px 5px;
+  
+  label {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  
+  input {
+    border: 1px solid #E0E0E0;
+    line-height: 20px;
+    font-size: 1em;
+  }
+}
+
+.back_link {
+  font-size: 0.8em;
+}

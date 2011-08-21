@@ -1,5 +1,10 @@
+<ul>
 <% @jobs.each do |job| %>
-  <div class="job_summary">
-    <h3><%= job.created_at.strftime("%d/%m/%y") %> <%= link_to "#{job.title} – #{job.company_name}, #{job.location}", job_path(job) %></h3> 
-  </div>
+    <li class="job_summary">
+      <a href="<%= job_path(job) %>">
+        <span class="job_title"><%= job.title %></span><%= " — #{job.contract_type}, #{job.company_name}, #{job.location}" %>
+      </a>
+        <span class="job_created_at"><%= job.created_at.strftime("%d/%m/%Y") %></span>
+    </li>
 <% end %>
+</ul>

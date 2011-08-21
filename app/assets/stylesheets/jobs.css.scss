@@ -12,7 +12,8 @@ a:hover {
 .job_summary {
   border-bottom: 1px solid #E0E0E0;
   font-size: 0.8em;
-  padding: 16px;
+  padding: 16px 0px 16px 0px;
+  line-height: 20px;
 }
 
 .form_container {
@@ -31,6 +32,16 @@ a:hover {
 
 }
 
+.job_created_at {
+  font-size: 0.9em;
+  display: block;
+  float: right;
+}
+
+.job_title {
+  font-weight: bold;
+}
+
 .job_card {
   border: 1px solid #E0E0E0;
   padding: 30px;
@@ -39,15 +50,11 @@ a:hover {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  
+    
   .job_title {
     color: $sky;
     font-size: 2em;
     margin-bottom: 20px;
-  }
-  
-  .job_created_at {
-    font-size: 0.7em;
   }
   
   .company_name {
@@ -78,7 +85,7 @@ a:hover {
       margin-top: 10px;
       margin-bottom: 5px;
     }
-    
+        
     p {
       font-size: 0.9em;
       margin: 7px 0px 0px 0px;
@@ -86,13 +93,21 @@ a:hover {
       color: #696C74;
       line-height: 20px;
     }
-      
+    
+    ul {
+      list-style-type: disc;    
+    }
+    
+    li {
+      margin-left: 15px;
+    }
+          
   }
   
   .job_apply {
     font-size: 0.9em;
     background: #ffffdd;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 5px 10px 5px;
     border-top: 1px solid white;
     font-weight: bold;
     margin-top: 30px;
