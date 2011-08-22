@@ -6,7 +6,7 @@
     <div class="infos_block">
       <p class="company_name"><%= @job.company_name %></p>
       <% if @job.company_url %>
-      <p><%= link_to @job.company_url %></p>
+      <p><%= link_to @job.company_url, @job.company_url, target: "_blank" %></p>
       <% end %>        
     </div>
     
@@ -14,7 +14,7 @@
       <p>Type de contrat : <%= @job.contract_type %></p>
       <p>Lieu : <%= @job.location %></p>  
     </div>
-    <p>Offre postée le : <%= @job.created_at.strftime("%d/%m/%y") %></p>
+    <p>Offre postée le <%= @job.created_at.strftime("%d/%m/%y") %></p>
     
   </div>
   
