@@ -1,4 +1,5 @@
 $ardoise: #444751;
+$sky: #48A1D8;
 
 body {
     font-family: "Helvetica", "Arial", sans-serif;
@@ -76,13 +77,20 @@ body {
   label {
     font-size: 0.9em;
     font-weight: bold;
+    color: $sky;
   }
   
-  input {
+  input, textarea {
     border: 1px solid #E0E0E0;
     line-height: 20px;
     font-size: 1em;
+    width: 500px;
   }
+}
+
+.field_tip {
+  font-size: 0.7em;
+  color: #aaaaaa;
 }
 
 .back_link {
