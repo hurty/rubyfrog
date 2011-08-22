@@ -13,7 +13,7 @@ class Job < ActiveRecord::Base
                             length:   { maximum: 200, message: "Le lieu est trop long (200 caractères max)" }
   validates :description,   presence: { message: "Vous devez décrire le poste et/ou le travail proposé"},
                             length:   { maximum: 20000, message: "La description est trop longue" }
-  validates :company_name,  presence: { message: "Vous devez décrire le poste et/ou le travail proposé"},
+  validates :company_name,  presence: { message: "Vous devez préciser le nom de la société qui propose cette offre"},
                             length:   { maximum: 100, message: "Le titre est trop long (100 caractères max)" }
   validates :company_email, presence: { message: "Vous devez donner une adresse e-mail"}, 
                             length:   { maximum: 255, message: "L'adresse est trop longue" }, 
