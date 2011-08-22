@@ -80,7 +80,7 @@ a:hover {
       margin-bottom: 10px;
     }
     
-    h2 {
+    h2, h3, h4, h5, h6 {
       font-weight: bold;
       margin-top: 10px;
       margin-bottom: 5px;
@@ -99,6 +99,8 @@ a:hover {
     
     li {
       margin-left: 15px;
+      font-size: 0.9em;
+      color: #696C74;
     }
           
   }

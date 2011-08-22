@@ -1,21 +1,24 @@
 <h2 class="page_title">Poster une offre</h2>
   <%= form_for @job do |f| %>
     <div class="field">
-    <%= f.label :title, "Titre de l'offre" %> <br />
+    <%= f.label :title, "Titre de l'offre" %><br />
     <%= f.text_field :title %>
     <%= @job.errors[:title].first %>
+    <p class="field_tip">"Développeur Rails 3", "Formateur Ruby" ... </p>
     </div>
 
     <div class="field">
     <%= f.label :contract_type, "Type de contrat" %> <br />
     <%= f.text_field :contract_type %>
     <%= @job.errors[:contract_type].first %>
+    <p class="field_tip">"CDI", "CDD", "Freelance", "Stage" ... </p>
     </div>
 
     <div class="field">
     <%= f.label :location, "Lieu" %> <br />
     <%= f.text_field :location %>
     <%= @job.errors[:location].first %>
+    <p class="field_tip">"Paris", "Bruxelles, Belgique", "A distance" ... </p>
     </div>
 
     <div class="field">
@@ -34,16 +37,14 @@
     <%= f.label :company_email, "Adresse e-mail pour candidater" %> <br />
     <%= f.text_field :company_email %>
     <%= @job.errors[:company_email].first %>
+    <p class="field_tip">Cette adresse sera publiquement affichée en bas de votre offre</p>
     </div>
 
     <div class="field">
     <%= f.label :company_url, "Site web de la société (facultatif)" %> <br />
-    <% if @job.company_url.blank? %>
-    <%= f.text_field :company_url, value: "http://www." %>  
-    <% else %>
-    <%= f.text_field :company_url %>
-    <% end %>
+    <%= f.text_field :company_url%>  
     <%= @job.errors[:company_url].first %>
+    <p class="field_tip">"http://www.google.com", http://www.knplabs.com" ...</p>
     </div>
 
     <%= f.submit "Prévisualiser l'offre" %>
