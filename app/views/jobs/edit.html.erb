@@ -1,4 +1,4 @@
-<h2 class="page_title">Poster une offre</h2>
+<h2 class="page_title">Modification de l'offre</h2>
 
 <%= form_for @job, :url => { :action => "update" } do |f| %>
 
@@ -55,3 +55,8 @@
   
   <%= f.submit "Prévisualiser l'offre" %>
 <% end %>
+
+<div id="delete_offer">
+  <p>Ce poste a déjà été pourvu ? Cette offre n'a plus raison d'être ? Vous pouvez <%= link_to "supprimer cette offre", 
+    job_path(id: @job.token), confirm: "Etes-vous sûr de vouloir supprimer cette offre ?", method: "delete" %>.</p>
+</div>

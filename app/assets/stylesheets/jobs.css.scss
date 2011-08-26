@@ -115,3 +115,23 @@ a:hover {
     margin-top: 30px;
   }
 }
+
+#delete_offer {
+  background: #ffffdd;
+  padding: 5px;
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+  margin-top: 20px;
+  
+  a {
+    color: #CD071E;
+  }
+}
+
+#delete_offer_success {
+  background: #eeffbb;
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 5px;
+  margin-bottom: 30px;
+}

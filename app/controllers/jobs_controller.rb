@@ -40,6 +40,11 @@ class JobsController < ApplicationController
     redirect_to job_path(@job)
   end
   
+  def destroy
+    @job = Job.find_by_token!(params[:id])
+    @job.destroy
+  end
+  
   def show
     @job = Job.find(params[:id])
   end

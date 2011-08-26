@@ -3,7 +3,7 @@
 <%= render :partial => 'job' %>
 
 <%= form_tag action: "publish" do %>
-<%= submit_tag "C'est bon, publier l'offre !" %>
+<%= submit_tag "C'est bon, publier l'offre !", class: "button" %>
 <% end %>
 <br/>
 <%= link_to "...non, je veux la modifier", edit_job_path(id: @job.token) %>
