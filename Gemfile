@@ -8,6 +8,7 @@ gem 'rails', '3.1.0.rc6'
 group :production do
   gem 'pg'
 end
+
 group :development, :test do
   gem 'sqlite3'
 end
@@ -38,3 +39,6 @@ end
 
 # Mardown displaying
 gem 'bluecloth'
+
+# Text search
+gem 'texticle', '~> 2.0', :require => 'texticle/rails'

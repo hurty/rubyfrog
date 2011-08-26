@@ -48,4 +48,8 @@ class JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
   end
+  
+  def search
+    @jobs = Job.search(params[:words]);
+  end
 end

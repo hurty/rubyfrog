@@ -7,4 +7,6 @@ Rubytaf::Application.routes.draw do
       post "publish"
     end
   end
+  
+  match "search/:words" => "jobs#search"
 end
