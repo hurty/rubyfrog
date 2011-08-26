@@ -55,10 +55,6 @@ body {
   background: #ffffdd;
 }
 
-.field_with_errors {
-  background: #E95C41;
-}
-
 .page_title {
   border-bottom: 1px solid #E0E0E0;
   border-top: 5px solid $ardoise;
@@ -91,6 +87,19 @@ body {
 .field_tip {
   font-size: 0.7em;
   color: #aaaaaa;
+}
+
+.field_with_errors {
+}
+
+.error_message {
+  color: #CD071E;
+}
+
+.global_error_message {
+  color : white;
+  background: #CD071E;
+  padding: 7px;
 }
 
 .back_link {

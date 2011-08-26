@@ -1,51 +1,57 @@
-<h2>Modifier l'offre</h2>
+<h2 class="page_title">Poster une offre</h2>
 
 <%= form_for @job, :url => { :action => "update" } do |f| %>
-  <div>
-  <%= f.label :title, "Titre de l'offre" %> <br />
-  <%= f.text_field :title %>
-  <%= @job.errors[:title].first %>
-  </div>
-  
-  <div>
-  <%= f.label :contract_type, "Type de contrat" %> <br />
-  <%= f.text_field :contract_type %>
-  <%= @job.errors[:contract_type].first %>
-  </div>
 
-  <div>
-  <%= f.label :location, "Lieu" %> <br />
-  <%= f.text_field :location %>
-  <%= @job.errors[:location].first %>
-  </div>
-
-  <div>
-  <%= f.label :description, "Description du poste" %> <br />
-  <%= f.text_area :description %>
-  <%= @job.errors[:description].first%>
-  </div>
-
-  <div>
-  <%= f.label :company_name, "Nom de la société" %> <br />
-  <%= f.text_field :company_name %>
-  <%= @job.errors[:company_name].first %>
-  </div>
-
-  <div>
-  <%= f.label :company_email, "Adresse e-mail pour candidater" %> <br />
-  <%= f.text_field :company_email %>
-  <%= @job.errors[:company_email].first %>
-  </div>
-
-  <div>
-  <%= f.label :company_url, "Site web de la société (facultatif)" %> <br />
-  <% if @job.company_url.blank? %>
-  <%= f.text_field :company_url, value: "http://www." %>  
-  <% else %>
-  <%= f.text_field :company_url %>
+  <% if @job.errors.any? %>
+  <p class="global_error_message">Oops ! il doit y avoir des erreurs dans le formulaire. L'offre n'a pas été mise à jour.</p>
   <% end %>
-  <%= @job.errors[:company_url].first %>
-  </div>
+
+  <dl class="field">
+    <dt><%= f.label :title, "Titre de l'offre" %></dt>
+    <dd><%= f.text_field :title %></dd>
+    <dd class="error_message"><%= @job.errors[:title].first %></dd>
+    <dd class="field_tip">"Développeur Rails 3", "Formateur Ruby" ...</dd>
+  </dl>
+
+  <dl class="field">
+    <dd><%= f.label :contract_type, "Type de contrat" %></dd>
+    <dd><%= f.text_field :contract_type %></dd>
+    <dd class="error_message"><%= @job.errors[:contract_type].first %></dd>
+    <dd class="field_tip">"CDI", "CDD", "Freelance", "Stage" ...</dd>
+  </dl>
+
+  <dl class="field">
+    <dd><%= f.label :location, "Lieu" %></dd>
+    <dd><%= f.text_field :location %></dd>
+    <dd class="error_message"><%= @job.errors[:location].first %></dd>
+    <dd class="field_tip">"Paris", "Bruxelles, Belgique", "A distance" ...</dd>
+  </dl>
+
+  <dl class="field">
+    <dd><%= f.label :description, "Description du poste" %></dd>
+    <dd><%= f.text_area :description %></dd>
+    <dd class="error_message"><%= @job.errors[:description].first%></dd>
+  </dl>
+
+  <dl class="field">
+    <dd><%= f.label :company_name, "Nom de la société" %></dd>
+    <dd><%= f.text_field :company_name %></dd>
+    <dd class="error_message"><%= @job.errors[:company_name].first %></dd>
+  </dl>
+
+  <dl class="field">
+    <dd><%= f.label :company_email, "Adresse e-mail pour candidater" %></dd>
+    <dd><%= f.text_field :company_email %></dd>
+    <dd class="error_message"><%= @job.errors[:company_email].first %></dd>
+    <dd class="field_tip">Cette adresse sera publiquement affichée en bas de votre offre</dd>
+  </dl>
+
+  <dl class="field">
+    <dd><%= f.label :company_url, "Site web de la société (facultatif)" %></dd>
+    <dd><%= f.text_field :company_url%></dd>
+    <dd class="error_message"><%= @job.errors[:company_url].first %></dd>
+    <dd class="field_tip">"http://www.google.com", http://www.knplabs.com" ...</dd>
+  </dl>
   
   <%= f.submit "Prévisualiser l'offre" %>
 <% end %>
