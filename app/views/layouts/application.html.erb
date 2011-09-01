@@ -14,7 +14,9 @@
     
     <div id="menu">
       <%= link_to "Liste des offres", jobs_path %>  
-      <%= link_to "Poster une offre", new_job_path %>      
+      <%= link_to new_job_path do %>
+        Poster une offre <sup>gratuit !</sup>
+      <% end %>
     </div>
     
     <% if flash[:notice] %>

@@ -35,7 +35,10 @@ body {
     text-decoration: none;
     background: yellow;
   }
-
+  
+  sup {
+      vertical-align: top; font-size: 0.6em;
+  }
 }
 
 #footer {
