@@ -93,6 +93,9 @@ body {
 }
 
 .field_with_errors {
+  textarea, input {
+    border: 1px solid #CD071E;
+  }
 }
 
 .error_message {
@@ -101,8 +104,9 @@ body {
 
 .global_error_message {
   color : white;
-  background: #CD071E;
+  background: #AA0011;
   padding: 7px;
+  margin: 20px 0px 20px 0px;
 }
 
 .back_link {
