@@ -1,1 +1,7 @@
+<% unless @tags.blank? %>
+<% content_for :title, "Résultats pour #{@tags}" %>
+<% else %>
+<% content_for :title, "Toutes les offres" %>
+<% end %>
+
 <%= render :partial => 'jobs_list' %>
