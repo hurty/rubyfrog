@@ -6,7 +6,9 @@ Rubytaf::Application.routes.draw do
       get "preview"
       post "publish"
     end
+    
+    collection do
+      get 'search'
+    end
   end
-  
-  match "search/:words" => "jobs#search"
 end

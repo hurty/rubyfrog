@@ -1,18 +1,1 @@
-RECHERCHE
-
-<% if @jobs.any? %>
-  <ul>
-  <% @jobs.each do |job| %>
-      <li class="job_summary">
-        <a href="<%= job_path(job) %>">
-          <span class="job_title"><%= job.title %></span><%= " — #{job.contract_type}, #{job.company_name}, #{job.location}" %>
-        </a>
-          <span class="job_created_at"><%= job.created_at.strftime("%d/%m/%Y") %></span>
-      </li>
-  <% end %>
-  </ul>
-<% else %>
-  <div class="info">
-    <p>Il n'y a aucune offre pour le moment</p>
-  </div>
-<% end %>
+<%= render :partial => 'jobs_list' %>

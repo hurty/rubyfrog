@@ -50,6 +50,11 @@ class JobsController < ApplicationController
   end
   
   def search
-    @jobs = Job.search(params[:words]);
+    # Search in the description large text field
+    jobs_by_description = Job.search(description: params[:tags])
+    # Search accross all other string fields
+    jobs_by_metadatas = Job.search(params[:tags])
+    
+    @jobs = jobs_by_metadatas | jobs_by_description    
   end
 end
