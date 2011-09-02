@@ -87,6 +87,13 @@ body {
   }
 }
 
+.search_field {
+  border: 1px solid #E0E0E0;
+  line-height: 20px;
+  font-size: 1em;
+  width: 200px;
+}
+
 .field_tip {
   font-size: 0.7em;
   color: #aaaaaa;
@@ -148,3 +155,6 @@ body {
 	top: 1px;
 }
 
+.info {
+  margin: 20px 0px 20px 0px;
+}

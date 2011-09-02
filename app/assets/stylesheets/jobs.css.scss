@@ -9,11 +9,16 @@ a:hover {
   text-decoration: underline;
 }
 
-.job_summary {
-  border-bottom: 1px solid #E0E0E0;
-  font-size: 0.8em;
-  padding: 16px 0px 16px 0px;
-  line-height: 20px;
+#jobs_list {
+  
+  margin: 20px 0px 20px 0px;
+  
+  .job_summary {
+    border-bottom: 1px solid #E0E0E0;
+    font-size: 0.8em;
+    padding: 16px 0px 16px 0px;
+    line-height: 20px;
+  }
 }
 
 .form_container {

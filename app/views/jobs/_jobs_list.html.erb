@@ -1,10 +1,11 @@
 <%= form_tag(search_jobs_path, method: "get") do %>
-  <%= text_field_tag(:tags) %>
+  <%= text_field_tag(:tags, @tags, class: "search_field") %>
   <%= submit_tag("Rechercher", class: "button") %>
+  <p class="field_tip">"Rails", "Paris", "CDI" ...</p>
 <% end %>
 
 <% if @jobs.any? %>
-  <ul>
+  <ul id="jobs_list">
   <% @jobs.each do |job| %>
       <li class="job_summary">
         <a href="<%= job_path(job) %>">
@@ -16,6 +17,6 @@
   </ul>
 <% else %>
   <div class="info">
-    <p>Il n'y a aucune offre pour le moment</p>
+    <p><%= @no_offer_msg %></p>
   </div>
 <% end %>

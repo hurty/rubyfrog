@@ -1,6 +1,12 @@
+# encoding: utf-8
+
 class JobsController < ApplicationController
   def index
     @jobs = Job.where(public: true).order("created_at DESC")
+    
+    if @jobs.empty?
+      @no_offer_msg = "Il n'y pas d'offres pour le moment"
+    end
   end
   
   def new
@@ -50,11 +56,21 @@ class JobsController < ApplicationController
   end
   
   def search
-    # Search in the description large text field
-    jobs_by_description = Job.search(description: params[:tags])
-    # Search accross all other string fields
-    jobs_by_metadatas = Job.search(params[:tags])
+    @tags = params[:tags]
     
-    @jobs = jobs_by_metadatas | jobs_by_description    
+    if @tags.blank?
+      @jobs = Job.where(public: true).order("created_at DESC")
+    else
+      # Search in the description large text field
+      jobs_by_description = Job.where(public: true).search(description: @tags)
+      # Search accross all other string fields
+      jobs_by_metadatas = Job.where(public: true).search(@tags)
+
+      @jobs = jobs_by_metadatas | jobs_by_description
+      
+      if @jobs.empty?
+        @no_offer_msg = "Il n'y pas d'offres correspondant à votre recherche"
+      end
+    end
   end
 end
