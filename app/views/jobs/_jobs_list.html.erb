@@ -11,7 +11,7 @@
         <a href="<%= job_path(job) %>">
           <span class="job_title"><%= job.title %></span><%= " — #{job.contract_type}, #{job.company_name}, #{job.location}" %>
         </a>
-          <span class="job_created_at"><%= job.created_at.strftime("%d/%m/%Y") %></span>
+          <span class="job_created_at">il y a <%= distance_of_time_in_words_to_now(job.created_at) %></span>
       </li>
   <% end %>
   </ul>
