@@ -23,6 +23,13 @@ class Job < ActiveRecord::Base
                             format:   { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "L'adresse e-mail est invalide"}
   validates :company_url,   length:   { maximum: 255, message: "L'adresse est trop longue" }
   
+  # Set the url slug
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
+  
+  # Set the offer publicly visible on the website
+  # A tweet is also sent on the My Ruby Frog's twitter account
   def publish
     # The job offer will be visible on the website
     self.public = true   
@@ -40,9 +47,10 @@ class Job < ActiveRecord::Base
       if tweet.length > 110
         tweet = tweet[0..110] + '...'
       end
-      
-      client = Twitter::Client.new
-      hash = client.update("#{tweet} #{job_url(self, host: "www.myrubyfrog.com")}")
+      if Rails.env.production?
+        client = Twitter::Client.new
+        hash = client.update("#{tweet} #{job_url(self, host: "www.myrubyfrog.com")}")
+      end
     rescue Exception => e  
       my_logger = Logger.new("#{Rails.root}/log/twitter.log")
       my_logger.info("job tweet fail :[#{self.id}] #{self.title} -- #{e.to_s}")
