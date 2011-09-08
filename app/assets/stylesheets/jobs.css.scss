@@ -45,7 +45,6 @@ a:hover {
 
 .job_title {
   font-weight: bold;
-  line-height: 40px;
 }
 
 .job_card {
@@ -61,6 +60,7 @@ a:hover {
     color: $sky;
     font-size: 2em;
     margin-bottom: 20px;
+    line-height: 45px;
   }
   
   .company_name {
