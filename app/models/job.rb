@@ -1,6 +1,9 @@
 # encoding: utf-8
+require 'twitter'
 
 class Job < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
+  
   attr_protected :token
   before_create :set_token
   
@@ -19,6 +22,32 @@ class Job < ActiveRecord::Base
                             length:   { maximum: 255, message: "L'adresse est trop longue" }, 
                             format:   { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "L'adresse e-mail est invalide"}
   validates :company_url,   length:   { maximum: 255, message: "L'adresse est trop longue" }
+  
+  def publish
+    # The job offer will be visible on the website
+    self.public = true   
+    
+    begin
+      # Maybe move this elsewhere
+      Twitter.configure do |config|
+        config.consumer_key = 'g1lGb5RruxYt5aktiNWAg'
+        config.consumer_secret = 'AbhtKDWGfQVSlaPvrhma7Zr00I3Vu9s3Lb9oFfGVk'
+        config.oauth_token = '370073753-r0IS9kciA7Wtsu9BBcGlfA6M6vvFdlLmaCHlW9kY'
+        config.oauth_token_secret = 'xUnB2hyp86hN938dP2ViVljsMudPnuIvZW2IyW2w'
+      end
+    
+      tweet = self.title
+      if tweet.length > 110
+        tweet = tweet[0..110] + '...'
+      end
+      
+      client = Twitter::Client.new
+      hash = client.update("#{tweet} #{job_url(self, host: "www.myrubyfrog.com")}")
+    rescue Exception => e  
+      my_logger = Logger.new("#{Rails.root}/log/twitter.log")
+      my_logger.info("job tweet fail :[#{self.id}] #{self.title} -- #{e.to_s}")
+    end
+  end
   
   private
   

@@ -41,8 +41,10 @@ class JobsController < ApplicationController
   
   def publish
     @job = Job.find_by_token!(params[:id])
-    @job.public = true
-    @job.save
+    unless @job.public?
+      @job.publish      
+      @job.save
+    end
     redirect_to job_path(@job)
   end
   
