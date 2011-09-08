@@ -1,4 +1,4 @@
-Rubytaf
+My Ruby Frog
 ============
 Job board for rubyists 
 
