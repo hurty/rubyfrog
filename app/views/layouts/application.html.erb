@@ -5,25 +5,29 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=VT323|Permanent+Marker' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Give+You+Glory' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Volkhov:700italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div id="container">
     
-    <h1 class="title">Ruby Jobboard</h1>
-    
-    <div id="menu">
-      <%= link_to "Liste des offres", jobs_path %>  
-      <%= link_to new_job_path do %>
-        Poster une offre <sup>gratuit !</sup>
+    <div id="header">
+      <h1 class="title">My Ruby Frog</h1>
+
+      <div id="menu">
+        <%= link_to "Liste des offres", jobs_path %>  
+        <%= link_to new_job_path do %>
+          Poster une offre <sup>gratuit !</sup>
+        <% end %>
+      </div>
+
+      <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
       <% end %>
     </div>
     
-    <% if flash[:notice] %>
-    <p class="notice"><%= flash[:notice] %></p>
-    <% end %>
-    
     <%= yield %>
+    
     <div id="footer">
     </div>
   </div>

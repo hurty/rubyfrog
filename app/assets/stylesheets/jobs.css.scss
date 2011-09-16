@@ -1,5 +1,20 @@
 $sky: #48A1D8;
 
+#search_jobs {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 40px 0 40px 0;
+  
+  .search_field {
+    border: 1px solid #E0E0E0;
+    line-height: 20px;
+    font-size: 1em;
+    width: 200px;
+    height: 26px;
+  }
+}
+
 a {
   color: $sky;
   text-decoration: none;
@@ -9,6 +24,15 @@ a:hover {
   text-decoration: underline;
 }
 
+#website_description {
+  font-family: "Volkhov", Georgia, serif;
+  font-size: 50px;
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 40px 0 40px 0;
+  line-height: 60px;
+}
+
 #jobs_list {
   
   margin: 20px 0px 20px 0px;
@@ -16,8 +40,13 @@ a:hover {
   .job_summary {
     border-bottom: 1px solid #E0E0E0;
     font-size: 0.8em;
-    padding: 16px 0px 16px 0px;
+    padding: 20px 0px 20px 0px;
     line-height: 20px;
+    
+    .job_title {
+      font-weight: bold;
+      width: 500px;
+    }
   }
 }
 
@@ -43,9 +72,7 @@ a:hover {
   float: right;
 }
 
-.job_title {
-  font-weight: bold;
-}
+
 
 .job_card {
   border: 1px solid #E0E0E0;

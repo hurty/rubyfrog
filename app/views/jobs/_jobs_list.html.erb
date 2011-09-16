@@ -1,8 +1,9 @@
-<%= form_tag(search_jobs_path, method: "get") do %>
-  <%= text_field_tag(:tags, @tags, class: "search_field") %>
-  <%= submit_tag("Rechercher", class: "button") %>
-  <p class="field_tip">"Rails", "Paris", "CDI" ...</p>
-<% end %>
+<div id="search_jobs">
+  <%= form_tag(search_jobs_path, method: "get") do %>
+    <%= text_field_tag(:tags, @tags, class: "search_field") %>
+    <%= submit_tag("Rechercher", class: "button") %>
+  <% end %>  
+</div>
 
 <% if @jobs.any? %>
   <ul id="jobs_list">
