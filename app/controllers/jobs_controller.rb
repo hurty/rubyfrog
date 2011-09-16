@@ -45,7 +45,11 @@ class JobsController < ApplicationController
       @job.publish      
       @job.save
     end
-    redirect_to job_path(@job)
+    redirect_to confirm_publication_job_path(id: @job.token)
+  end
+  
+  def confirm_publication
+    @job = Job.find_by_token!(params[:id])
   end
   
   def destroy

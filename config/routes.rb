@@ -5,6 +5,7 @@ MyRubyFrog::Application.routes.draw do
     member do
       get "preview"
       post "publish"
+      get "confirm_publication"
     end
     
     collection do
