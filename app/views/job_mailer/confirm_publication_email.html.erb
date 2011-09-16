@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Votre offre a été publiée</h1>
+    <p>Vous pourrez la modifier ou la supprimer à tout moment en suivant ce lien :</p>
+    <p><%= link_to edit_job_url(id: @job.token), edit_job_url(id: @job.token) %></p>
+    <p>Bien entendu, gardez ce lien secret !</p>    
+  </body>
+</html>

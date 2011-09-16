@@ -41,5 +41,15 @@ module MyRubyFrog
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    
+    config.action_mailer.default_url_options = { host: "myrubyfrog.com" }
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address              => "in.mailjet.com",
+      :port                 => 587,
+      :user_name            => 'b0c12f635bea2d5a214a656520464665',
+      :password             => 'd9dc6557062b3bf14644ddda56cb77e9',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true  }
   end
 end

@@ -42,8 +42,9 @@ class JobsController < ApplicationController
   def publish
     @job = Job.find_by_token!(params[:id])
     unless @job.public?
-      @job.publish      
+      @job.publish
       @job.save
+      JobMailer.confirm_publication_email(@job).deliver
     end
     redirect_to confirm_publication_job_path(id: @job.token)
   end
